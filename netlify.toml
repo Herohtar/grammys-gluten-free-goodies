@@ -3,6 +3,11 @@
   command = "npm run build"
 [[redirects]]
   from = "http://laughing-boyd-2bc4b2.netlify.com/*"
-  to = "http://grammys.herohtar.com/:splat"
+  to = "https://grammys.herohtar.com/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://laughing-boyd-2bc4b2.netlify.com/*"
+  to = "https://grammys.herohtar.com/:splat"
   status = 301
   force = true
