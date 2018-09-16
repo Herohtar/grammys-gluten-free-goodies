@@ -2,12 +2,12 @@
   publish = "dist"
   command = "npm run build"
 [[redirects]]
-  from = "http://laughing-boyd-2bc4b2.netlify.com/*"
+  from = "http://grammysglutenfreegoodies.netlify.com/*"
   to = "https://grammys.herohtar.com/:splat"
   status = 301
   force = true
 [[redirects]]
-  from = "https://laughing-boyd-2bc4b2.netlify.com/*"
+  from = "https://grammysglutenfreegoodies.netlify.com/*"
   to = "https://grammys.herohtar.com/:splat"
   status = 301
   force = true
