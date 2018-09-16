@@ -23,6 +23,7 @@ const styles = theme => ({
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
+    minHeight: '100vh',
   },
   header: {
     maxWidth: '100%',
@@ -36,7 +37,14 @@ const styles = theme => ({
   footer: {
     paddingTop: theme.spacing.unit * 4,
     color: theme.palette.text.footer,
-  }
+  },
+  flexColumn: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  flexGrow: {
+    flexGrow: 1,
+  },
 })
 
 class App extends React.PureComponent {
@@ -52,18 +60,16 @@ class App extends React.PureComponent {
 
     return (
       <Router>
-        <div className={classes.root}>
+        <Grid container direction="column" justify="space-between" alignItems="center" className={classes.root}>
           <CssBaseline />
-            <SiteData render={({headerImage}) => (
-              <Grid container justify="center" component="header">
-                <Grid item xs="auto">
-                  <img src={headerImage} className={classes.header} />
-                </Grid>
-              </Grid>
-            )} />
-          <Grid container justify="center">
-            <Grid item xs={12} sm={11} md={9} lg={6}>
-              <Paper className={classes.content}>
+          <SiteData render={({headerImage}) => (
+            <Grid item justify="center" component="header" xs="auto">
+              <img src={headerImage} className={classes.header} />
+            </Grid>
+          )} />
+          <Grid item container justify="center" component="main" className={classes.flexGrow}>
+            <Grid item xs={12} sm={11} md={9} lg={6} className={classes.flexColumn}>
+              <Paper className={[classes.content, classes.flexGrow].join(' ')}>
                 <Route path="*" render={({ location }) => (
                   <Tabs value={cleanPath(location.pathname)} centered component="nav">
                     <Tab component={Link} value={cleanPath(routes.HOME)} exact to={routes.HOME} label="Home" />
@@ -75,12 +81,10 @@ class App extends React.PureComponent {
               </Paper>
             </Grid>
           </Grid>
-          <Grid container justify="center" className={classes.footer} component="footer">
-            <Grid item xs="auto">
-              <Typography variant="caption" color="inherit">Powered by React Static and Netlify CMS</Typography>
-            </Grid>
+          <Grid item className={classes.footer} component="footer" xs="auto">
+            <Typography variant="caption" color="inherit">Powered by React Static and Netlify CMS</Typography>
           </Grid>
-        </div>
+        </Grid>
       </Router>
     )
   }
