@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "image": "/uploads/carouselImage0.png",
+      "title": "Chocolate Covered Cherries"
+    },
+    {
+      "image": "/uploads/carouselImage1.png",
+      "title": "Cake Pops"
+    },
+    {
+      "image": "/uploads/carouselImage2.png",
+      "title": "Chocolate Covered Cherries"
+    },
+    {
+      "image": "/uploads/carouselImage3.png",
+      "title": "Cake Pops"
+    },
+    {
+      "image": "/uploads/carouselImage4.png",
+      "title": "Chocolate Covered Cherries"
+    },
+    {
+      "image": "/uploads/carouselImage5.png",
+      "title": "Chocolate Covered Cherry Detail"
+    },
+    {
+      "image": "/uploads/carouselImage6.png",
+      "title": "Cupcakes"
+    },
+    {
+      "image": "/uploads/carouselImage7.png",
+      "title": "Pie Crusts"
+    },
+    {
+      "image": "/uploads/carouselImage8.png",
+      "title": "Cake Pop Baskets"
+    }
+  ]
+}

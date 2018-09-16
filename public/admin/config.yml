@@ -1,0 +1,75 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: "public/uploads" # Media files will be stored in the repo under public/uploads
+public_folder: "/uploads" # Folder path where uploaded files will be accessed, relative to the base of the built site
+
+display_url: https://grammys.herohtar.com
+
+collections:
+  - label: "Data"
+    name: "data"
+    files:
+      - label: "Configuration"
+        name: "siteConfig"
+        file: "src/content/SiteConfig.json"
+        fields:
+          - {label: "Site Title", name: "title", widget: string}
+          - {label: "Tagline", name: "tagline", widget: string}
+          - {label: "URL", name: "url", widget: string}
+          - {label: "Header Image", name: "headerImage", widget: image}
+      - label: "Image Carousel"
+        name: "imageCarousel"
+        file: "src/content/ImageCarousel.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: list
+            fields:
+              - {label: "Image", name: "image", widget: image}
+              - {label: "Title", name: "title", widget: text}
+      - label: "FAQs"
+        name: "faq"
+        file: "src/content/Faq.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: list
+            fields:
+              - {label: "Question", name: "question", widget: text}
+              - {label: "Answer", name: "answer", widget: markdown}
+      - label: "Products"
+        name: "products"
+        file: "src/content/Products.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: list
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Price", name: "price", widget: "string"}
+              - {label: "Description", name: "description", widget: "markdown"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Available", name: "available", widget: "boolean", default: true}
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Home Page"
+        name: "homePage"
+        file: "src/content/pages/HomePage.json"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Content, name: content, widget: markdown}
+      - label: "Products Page"
+        name: "productsPage"
+        file: "src/content/pages/ProductsPage.json"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Tagline, name: tagline, widget: string}
+      - label: "Order Page"
+        name: "orderPage"
+        file: "src/content/pages/OrderPage.json"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: "Success Message", name: "successMessage", widget: markdown}
