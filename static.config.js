@@ -78,7 +78,7 @@ export default {
             <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
             <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
             <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
-            <script src="https://identity-js.netlify.com/v1/netlify-identity-widget.js" />
+            <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
           </Head>
           <Body>
             {children}
