@@ -8,7 +8,7 @@ export default () => (
     <SiteData render={({ title }) => (
       <Head title={`Page not found - ${title}`} />
     )} />
-    <Typography variant="headline" align="center">
+    <Typography variant="h5" align="center">
       404 - Oh no's! We couldn't find that page :(
     </Typography>
   </div>

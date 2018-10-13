@@ -36,7 +36,7 @@ export default withStyles(styles)(({ classes }) => (
       <SiteData render={({ title }) => (
         <Head title={title} />
       )} />
-      <Typography variant="subheading" align="center" component="div" paragraph><ReactMarkdown source={homePage.content} /></Typography>
+      <Typography variant="subtitle1" align="center" component="div" paragraph><ReactMarkdown source={homePage.content} /></Typography>
       <Slider {...settings} className={classes.slider}>
         {
           imageCarousel.items.map((item, i) => (
@@ -46,12 +46,12 @@ export default withStyles(styles)(({ classes }) => (
           ))
         }
       </Slider>
-      <Typography variant="title" paragraph>Questions and Answers</Typography>
+      <Typography variant="h6" paragraph>Questions and Answers</Typography>
       {
         faq.items.map(({question, answer}, index) => (
           <div key={index}>
-            <Typography variant="body2">{question}</Typography>
-            <Typography variant="body1" paragraph>{answer}</Typography>
+            <Typography variant="body1">{question}</Typography>
+            <Typography variant="body2" paragraph>{answer}</Typography>
           </div>
         ))
       }

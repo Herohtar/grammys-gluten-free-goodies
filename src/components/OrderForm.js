@@ -111,7 +111,7 @@ class OrderForm extends React.Component {
                 productList.map(({id, name}) => (
                   <ExpansionPanel key={id} className={classes.expander}>
                     <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                      <Typography variant="subheading">{name}</Typography>
+                      <Typography variant="subtitle1">{name}</Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                       <TextField name={id} label="Amount" value={this.state[id]} onChange={this.handleChange} fullWidth disabled={disabled} />

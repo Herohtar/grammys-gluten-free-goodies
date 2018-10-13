@@ -28,9 +28,9 @@ export default withStyles(styles)(({ classes, product }) => (
     <CardMedia image={product.image} className={classes.image} />
     <CardHeader title={product.name} />
     <CardContent className={[classes.expand, classes.flexColumn].join(' ')}>
-      <Typography variant="body1" className={classes.expand} paragraph>{product.description}</Typography>
-      <Typography variant="body2">Price:</Typography>
-      <Typography variant="body1">{product.price}</Typography>
+      <Typography variant="body2" className={classes.expand} paragraph>{product.description}</Typography>
+      <Typography variant="body1">Price:</Typography>
+      <Typography variant="body2">{product.price}</Typography>
     </CardContent>
   </Card>
 ))

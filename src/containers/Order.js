@@ -78,7 +78,7 @@ class OrderPage extends React.Component {
         <Grid container justify="center" style={{ paddingTop: '25px' }}>
           <Grid item xs={12} sm={10}>
             { submitted ?
-              <Typography variant="title" align="center"><ReactMarkdown source={orderPage.successMessage} /></Typography>
+              <Typography variant="h6" align="center"><ReactMarkdown source={orderPage.successMessage} /></Typography>
               :
               <OrderForm productList={productList} onSubmit={this.handleSubmit} disabled={submitting} />
             }
