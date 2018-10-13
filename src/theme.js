@@ -15,5 +15,8 @@ export default {
       form: brown[50],
       expander: grey[100],
     },
-  }
+  },
+  typography: {
+    useNextVariants: true,
+  },
 }
