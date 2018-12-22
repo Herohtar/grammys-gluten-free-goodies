@@ -1,7 +1,7 @@
 import React from 'react'
-import { SiteData, Router, Route, Link, cleanPath } from 'react-static'
+import { SiteData, Root, Routes, cleanPath } from 'react-static'
+import { Link } from '@reach/router'
 //
-import Routes from 'react-static-routes'
 import { withStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
@@ -59,24 +59,28 @@ class App extends React.PureComponent {
     const { classes } = this.props
 
     return (
-      <Router>
+      <Root>
         <Grid container direction="column" justify="space-between" alignItems="center" className={classes.root}>
           <CssBaseline />
-          <SiteData render={({headerImage}) => (
-            <Grid item component="header" xs="auto">
-              <img src={headerImage} className={classes.header} />
-            </Grid>
-          )} />
+          <SiteData>
+            {({headerImage}) => (
+              <Grid item component="header" xs="auto">
+                <img src={headerImage} className={classes.header} />
+              </Grid>
+            )}
+          </SiteData>
           <Grid item container justify="center" component="main" className={classes.flexGrow}>
             <Grid item xs={12} sm={11} md={9} lg={6} className={classes.flexColumn}>
               <Paper className={[classes.content, classes.flexGrow].join(' ')}>
-                <Route path="*" render={({ location }) => (
-                  <Tabs value={cleanPath(location.pathname)} centered component="nav">
-                    <Tab component={Link} value={cleanPath(routes.HOME)} exact to={routes.HOME} label="Home" />
-                    <Tab component={Link} value={cleanPath(routes.PRODUCTS)} to={routes.PRODUCTS} label="Products" />
-                    <Tab component={Link} value={cleanPath(routes.ORDER)} to={routes.ORDER} label="Order Form" />
-                  </Tabs>
-                )} />
+                <Route path="*">
+                  {({ location }) => (
+                    <Tabs value={cleanPath(location.pathname)} centered component="nav">
+                      <Tab component={Link} value={cleanPath(routes.HOME)} exact to={routes.HOME} label="Home" />
+                      <Tab component={Link} value={cleanPath(routes.PRODUCTS)} to={routes.PRODUCTS} label="Products" />
+                      <Tab component={Link} value={cleanPath(routes.ORDER)} to={routes.ORDER} label="Order Form" />
+                    </Tabs>
+                  )}
+                </Route>
                 <Routes />
               </Paper>
             </Grid>
@@ -85,7 +89,7 @@ class App extends React.PureComponent {
             <Typography variant="caption" color="inherit">Powered by React Static and Netlify CMS</Typography>
           </Grid>
         </Grid>
-      </Router>
+      </Root>
     )
   }
 }

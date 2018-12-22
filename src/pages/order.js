@@ -72,9 +72,11 @@ class OrderPage extends React.Component {
 
     return (
       <div className={classes.root}>
-        <SiteData render={({ title }) => (
-          <Head title={`${orderPage.title} - ${title}`} />
-        )} />
+        <SiteData>
+          {({ title }) => (
+            <Head title={`${orderPage.title} - ${title}`} />
+          )}
+        </SiteData>
         <Grid container justify="center" style={{ paddingTop: '25px' }}>
           <Grid item xs={12} sm={10}>
             { submitted ?
