@@ -1,6 +1,6 @@
 import React from 'react'
 import { SiteData, Root, Routes } from 'react-static'
-import { Router, Link } from '@reach/router'
+import { Location, Link } from '@reach/router'
 //
 import { withStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -47,14 +47,6 @@ const styles = theme => ({
   },
 })
 
-const Nav = ({ location }) => (
-  <Tabs value={location.pathname} centered component="nav">
-    <Tab component={Link} value={routes.HOME} to={routes.HOME} label="Home" />
-    <Tab component={Link} value={routes.PRODUCTS} to={routes.PRODUCTS} label="Products" />
-    <Tab component={Link} value={routes.ORDER} to={routes.ORDER} label="Order Form" />
-  </Tabs>
-)
-
 class App extends React.PureComponent {
   componentDidMount() {
     const jssStyles = document.getElementById('jss-server-side')
@@ -71,7 +63,7 @@ class App extends React.PureComponent {
         <Grid container direction="column" justify="space-between" alignItems="center" className={classes.root}>
           <CssBaseline />
           <SiteData>
-            {({headerImage}) => (
+            {({ headerImage }) => (
               <Grid item component="header" xs="auto">
                 <img src={headerImage} className={classes.header} />
               </Grid>
@@ -80,9 +72,15 @@ class App extends React.PureComponent {
           <Grid item container justify="center" component="main" className={classes.flexGrow}>
             <Grid item xs={12} sm={11} md={9} lg={6} className={classes.flexColumn}>
               <Paper className={[classes.content, classes.flexGrow].join(' ')}>
-                <Router>
-                  <Nav path="*" />
-                </Router>
+                <Location>
+                  {({ location }) => (
+                    <Tabs value={location.pathname} centered component="nav">
+                      <Tab component={Link} value={routes.HOME} to={routes.HOME} label="Home" />
+                      <Tab component={Link} value={routes.PRODUCTS} to={routes.PRODUCTS} label="Products" />
+                      <Tab component={Link} value={routes.ORDER} to={routes.ORDER} label="Order Form" />
+                    </Tabs>
+                  )}
+                </Location>
                 <Routes />
               </Paper>
             </Grid>
