@@ -37,7 +37,7 @@ export default {
       },
     ]
   },
-  Document: ({ Html, Head, Body, children}) => (
+  Document: ({ Html, Head, Body, children }) => (
     <Html lang="en-US">
       <Head>
         <meta charSet="UTF-8" />
