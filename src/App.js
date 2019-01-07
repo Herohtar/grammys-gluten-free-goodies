@@ -1,16 +1,12 @@
 import React from 'react'
 import { SiteData, Root, Routes } from 'react-static'
-import { Location, Link } from '@reach/router'
 //
 import { withStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
-
-import * as routes from './constants/routes'
+import NavigationTabs from './components/NavigationTabs'
 
 const styles = theme => ({
   root: {
@@ -72,15 +68,7 @@ class App extends React.PureComponent {
           <Grid item container justify="center" component="main" className={classes.flexGrow}>
             <Grid item xs={12} sm={11} md={9} lg={6} className={classes.flexColumn}>
               <Paper className={[classes.content, classes.flexGrow].join(' ')}>
-                <Location>
-                  {({ location }) => (
-                    <Tabs value={location.pathname} centered component="nav">
-                      <Tab component={Link} value={routes.HOME} to={routes.HOME} label="Home" />
-                      <Tab component={Link} value={routes.PRODUCTS} to={routes.PRODUCTS} label="Products" />
-                      <Tab component={Link} value={routes.ORDER} to={routes.ORDER} label="Order Form" />
-                    </Tabs>
-                  )}
-                </Location>
+                <NavigationTabs />
                 <Routes />
               </Paper>
             </Grid>
