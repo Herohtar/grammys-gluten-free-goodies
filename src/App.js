@@ -43,43 +43,30 @@ const styles = theme => ({
   },
 })
 
-class App extends React.PureComponent {
-  componentDidMount() {
-    const jssStyles = document.getElementById('jss-server-side')
-    if (jssStyles && jssStyles.parentNode) {
-      jssStyles.parentNode.removeChild(jssStyles)
-    }
-  }
-
-  render() {
-    const { classes } = this.props
-
-    return (
-      <Root>
-        <Grid container direction="column" justify="space-between" alignItems="center" className={classes.root}>
-          <CssBaseline />
-          <SiteData>
-            {({ headerImage }) => (
-              <Grid item component="header" xs="auto">
-                <img src={headerImage} className={classes.header} />
-              </Grid>
-            )}
-          </SiteData>
-          <Grid item container justify="center" component="main" className={classes.flexGrow}>
-            <Grid item xs={12} sm={11} md={9} lg={6} className={classes.flexColumn}>
-              <Paper className={[classes.content, classes.flexGrow].join(' ')}>
-                <NavigationTabs />
-                <Routes />
-              </Paper>
-            </Grid>
+const App = ({ classes }) => (
+  <Root>
+    <Grid container direction="column" justify="space-between" alignItems="center" className={classes.root}>
+      <CssBaseline />
+      <SiteData>
+        {({ headerImage }) => (
+          <Grid item component="header" xs="auto">
+            <img src={headerImage} className={classes.header} />
           </Grid>
-          <Grid item className={classes.footer} component="footer" xs="auto">
-            <Typography variant="caption" color="inherit">Powered by React Static and Netlify CMS</Typography>
-          </Grid>
+        )}
+      </SiteData>
+      <Grid item container justify="center" component="main" className={classes.flexGrow}>
+        <Grid item xs={12} sm={11} md={9} lg={6} className={classes.flexColumn}>
+          <Paper className={[classes.content, classes.flexGrow].join(' ')}>
+            <NavigationTabs />
+            <Routes />
+          </Paper>
         </Grid>
-      </Root>
-    )
-  }
-}
+      </Grid>
+      <Grid item className={classes.footer} component="footer" xs="auto">
+        <Typography variant="caption" color="inherit">Powered by React Static and Netlify CMS</Typography>
+      </Grid>
+    </Grid>
+  </Root>
+)
 
 export default withStyles(styles)(App)
