@@ -11,7 +11,7 @@ import * as routes from '../constants/routes'
 // trailing slash from the path string (with the exception of the root path, '/')
 const cleanPath = path => path.replace(/\/$/, '') || '/'
 
-const NavigationTabs = React.memo(() => (
+const NavigationTabs = () => (
   <Location>
     {({ location }) => (
       <Tabs value={cleanPath(location.pathname)} centered component="nav">
@@ -21,6 +21,6 @@ const NavigationTabs = React.memo(() => (
       </Tabs>
     )}
   </Location>
-))
+)
 
 export default NavigationTabs
