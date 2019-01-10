@@ -12,31 +12,34 @@ import products from './src/content/Products.json'
 
 export default {
   siteRoot: siteConfig.url,
-  getSiteData: () => (
-    siteConfig
-  ),
-  getRoutes: async () => {
-    return [
-      {
-        path: routes.HOME,
-        getData: () => ({homePage, imageCarousel, faq}),
-      },
-      {
-        path: routes.PRODUCTS,
-        getData: () => ({productsPage, products}),
-      },
-      {
-        path: routes.ORDER,
-        getData: () => ({
-          orderPage,
-          productList: products.items.map((product, index) => ({
-            id: `product${index}`,
-            name: product.name,
-          })),
-        }),
-      },
-    ]
-  },
+  getSiteData: () => siteConfig,
+  getRoutes: () => [
+    {
+      path: routes.HOME,
+      getData: () => ({
+        homePage,
+        imageCarousel,
+        faq,
+      }),
+    },
+    {
+      path: routes.PRODUCTS,
+      getData: () => ({
+        productsPage,
+        products,
+      }),
+    },
+    {
+      path: routes.ORDER,
+      getData: () => ({
+        orderPage,
+        productList: products.items.map((product, index) => ({
+          id: `product${index}`,
+          name: product.name,
+        })),
+      }),
+    },
+  ],
   Document: ({ Html, Head, Body, children }) => (
     <Html lang="en-US">
       <Head>
