@@ -18,14 +18,10 @@ const styles = theme => ({
 })
 
 class OrderPage extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      submitting: false,
-      submitted: false,
-      error: false,
-    }
+  state = {
+    submitting: false,
+    submitted: false,
+    error: false,
   }
 
   handleClose = (event, reason) =>
