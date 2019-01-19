@@ -39,7 +39,7 @@ export default withStyles(styles)(({ classes }) => (
             <Head title={title} />
           )}
         </SiteData>
-        <Typography variant="subtitle1" align="center" component="div" paragraph><ReactMarkdown source={homePage.content} /></Typography>
+        <Typography variant="body1" align="center" component={ReactMarkdown} source={homePage.content} paragraph />
         <ImageGallery {...gallerySettings} additionalClass={classes.gallery} items={imageCarousel.items.map(item => ({
           original: item.image,
           thumbnail: item.image,
@@ -49,12 +49,12 @@ export default withStyles(styles)(({ classes }) => (
           thumbnailAlt: item.title,
           description: item.title
         }))} />
-        <Typography variant="h6" paragraph>Questions and Answers</Typography>
+        <Typography variant="h5" paragraph>Questions and Answers</Typography>
         {
           faq.items.map(({question, answer}, index) => (
             <div key={index}>
-              <Typography variant="body1">{question}</Typography>
-              <Typography variant="body2" paragraph>{answer}</Typography>
+              <Typography variant="h6">{question}</Typography>
+              <Typography variant="body1" paragraph>{answer}</Typography>
             </div>
           ))
         }
