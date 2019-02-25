@@ -75,4 +75,4 @@ collections:
         file: "src/content/pages/OrderPage.json"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: "Success Message", name: "successMessage", widget: markdown}
+          - {label: Content, name: content, widget: markdown}

@@ -33,10 +33,6 @@ export default {
       path: routes.ORDER,
       getData: () => ({
         orderPage,
-        productList: products.items.map((product, index) => ({
-          id: `product${index}`,
-          name: product.name,
-        })),
       }),
     },
   ],
