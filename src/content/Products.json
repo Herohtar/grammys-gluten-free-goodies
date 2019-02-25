@@ -1,10 +1,10 @@
 {
   "items": [
     {
-      "name": "Cake Pop Basket",
-      "price": "Varies Depending on Size",
-      "description": "Submit size of basket in the order form and we'll get back to you on the price!",
-      "image": "/uploads/CakePopBasket.jpg",
+      "name": "Cupcakes",
+      "price": "$48/dozen",
+      "description": "Flavors - chocolate, lemon, strawberry, mocha, chocolate with mint icing\n\nMade to order  need 1-2 weeks notice",
+      "image": "/uploads/Cupcakes.jpg",
       "available": true
     },
     {
@@ -15,10 +15,10 @@
       "available": true
     },
     {
-      "name": "Chocolate Covered Cherries",
-      "price": "16 cherries for $20",
-      "description": "These are available Dec. 1 - Feb. 14 and can be special ordered at other times.",
-      "image": "/uploads/ChocolateCoveredCherries.jpg",
+      "name": "Cake Pop Basket",
+      "price": "Varies Depending on Size",
+      "description": "Submit size of basket in the order form and we'll get back to you on the price!",
+      "image": "/uploads/CakePopBasket.jpg",
       "available": true
     },
     {
@@ -29,17 +29,17 @@
       "available": true
     },
     {
-      "name": "Cupcakes",
-      "price": "$48/dozen",
-      "description": "Flavors - chocolate, lemon, strawberry, mocha, chocolate with mint icing\n\nMade to order  need 1-2 weeks notice",
-      "image": "/uploads/Cupcakes.jpg",
-      "available": true
-    },
-    {
       "name": "Pie Crusts",
       "price": "2 for $20",
       "description": "9 inch deep dish pie crusts\n\nAvailable November-December",
       "image": "/uploads/PieCrusts.jpg",
+      "available": true
+    },
+    {
+      "name": "Chocolate Covered Cherries",
+      "price": "16 cherries for $20",
+      "description": "These are available Dec. 1 - Feb. 14 and can be special ordered at other times.",
+      "image": "/uploads/ChocolateCoveredCherries.jpg",
       "available": true
     }
   ]
