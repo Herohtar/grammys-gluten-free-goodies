@@ -8,7 +8,7 @@ backend:
 media_folder: "public/uploads" # Media files will be stored in the repo under public/uploads
 public_folder: "/uploads" # Folder path where uploaded files will be accessed, relative to the base of the built site
 
-display_url: https://grammys.herohtar.com
+display_url: https://grammysglutenfreegoodies.com
 
 collections:
   - label: "Data"
