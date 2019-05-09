@@ -11,9 +11,19 @@ import faq from './src/content/Faq.json'
 import products from './src/content/Products.json'
 
 export default {
+  plugins: [
+    [
+      require.resolve('react-static-plugin-source-filesystem'),
+      {
+        location: path.resolve('./src/pages'),
+      },
+    ],
+    require.resolve('react-static-plugin-reach-router'),
+    require.resolve('react-static-plugin-sitemap'),
+  ],
   siteRoot: siteConfig.url,
   getSiteData: () => siteConfig,
-  getRoutes: () => [
+  getRoutes: async () => [
     {
       path: routes.HOME,
       getData: () => ({
