@@ -1,17 +1,22 @@
-import React from 'react'
-import { SiteData, Head } from 'react-static'
+import React, { useState, useEffect } from 'react'
+import { Head, useSiteData } from 'react-static'
 //
 import Typography from '@material-ui/core/Typography'
 
-export default () => (
-  <div>
-    <SiteData>
-      {({ title }) => (
-        <Head title={`Page not found - ${title}`} />
-      )}
-    </SiteData>
-    <Typography variant="h5" align="center">
-      404 - Oh no's! We couldn't find that page :(
-    </Typography>
-  </div>
-)
+export default () => {
+  const [ready, setReady] = useState(false)
+
+  useEffect(() => {
+    setReady(true)
+  }, [])
+
+  const { title } = useSiteData()
+
+  return ready ? (
+    <div>
+      <Head title={`Page Not Found - ${title}`} />
+      <Typography variant="h3" align="center" paragraph>404</Typography>
+      <Typography variant="h4" align="center">The page you requested could not be found.</Typography>
+    </div>
+  ) : null
+}
