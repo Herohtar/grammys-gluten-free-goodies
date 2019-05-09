@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiteData, Head, withRouteData } from 'react-static'
+import { Head, useSiteData, useRouteData } from 'react-static'
 //
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
@@ -13,27 +13,17 @@ const styles = theme => ({
   },
 })
 
-class OrderPage extends React.Component {
-  render() {
-    const { classes, orderPage } = this.props
-
-    return (
-      <div className={classes.root}>
-        <SiteData>
-          {({ title }) => (
-            <Head title={`${orderPage.title} - ${title}`} />
-          )}
-        </SiteData>
-        <Grid container justify="center" style={{ paddingTop: '25px' }}>
-          <Grid item xs={12} sm={10}>
-            <Typography variant="h6" align="center"><ReactMarkdown source={orderPage.content} /></Typography>
-          </Grid>
+export default withStyles(styles)(({ classes }) => {
+  const { title } = useSiteData()
+  const { orderPage } = useRouteData()
+  return (
+    <div className={classes.root}>
+      <Head title={`${orderPage.title} - ${title}`} />
+      <Grid container justify="center" style={{ paddingTop: '25px' }}>
+        <Grid item xs={12} sm={10}>
+          <Typography variant="h6" align="center"><ReactMarkdown source={orderPage.content} /></Typography>
         </Grid>
-      </div>
-    )
-  }
-}
-
-const styledOrderPage = withStyles(styles)(OrderPage)
-
-export default withRouteData(styledOrderPage)
+      </Grid>
+    </div>
+  )
+})
