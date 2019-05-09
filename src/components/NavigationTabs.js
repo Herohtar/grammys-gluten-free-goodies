@@ -1,6 +1,6 @@
 import React from 'react'
-import { Location, Link } from '@reach/router'
 //
+import { Location, Link } from 'components/Router'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 
