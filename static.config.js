@@ -1,5 +1,6 @@
 import React from 'react'
 //
+import path from 'path'
 import * as routes from './src/constants/routes'
 
 import siteConfig from './src/content/SiteConfig.json'
