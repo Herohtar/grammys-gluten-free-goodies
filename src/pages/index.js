@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiteData, RouteData, Head } from 'react-static'
+import { Head, useSiteData, useRouteData } from 'react-static'
 //
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
@@ -30,35 +30,31 @@ const gallerySettings = {
   slideInterval: 10000,
 }
 
-export default withStyles(styles)(({ classes }) => (
-  <RouteData>
-    {({ homePage, imageCarousel, faq }) => (
-      <div className={classes.root}>
-        <SiteData>
-          {({ title }) => (
-            <Head title={title} />
-          )}
-        </SiteData>
-        <Typography variant="body1" align="center" component={ReactMarkdown} source={homePage.content} paragraph />
-        <ImageGallery {...gallerySettings} additionalClass={classes.gallery} items={imageCarousel.items.map(item => ({
-          original: item.image,
-          thumbnail: item.image,
-          originalTitle: item.title,
-          thumbnailTitle: item.title,
-          originalAlt: item.title,
-          thumbnailAlt: item.title,
-          description: item.title
-        }))} />
-        <Typography variant="h5" paragraph>Questions and Answers</Typography>
-        {
-          faq.items.map(({question, answer}, index) => (
-            <div key={index}>
-              <Typography variant="h6">{question}</Typography>
-              <Typography variant="body1" paragraph>{answer}</Typography>
-            </div>
-          ))
-        }
-      </div>
-    )}
-  </RouteData>
-))
+export default withStyles(styles)(({ classes }) => {
+  const { title } = useSiteData()
+  const { homePage, imageCarousel, faq } = useRouteData()
+  return (
+    <div className={classes.root}>
+      <Head title={title} />
+      <Typography variant="body1" align="center" component={ReactMarkdown} source={homePage.content} paragraph />
+      <ImageGallery {...gallerySettings} additionalClass={classes.gallery} items={imageCarousel.items.map(item => ({
+        original: item.image,
+        thumbnail: item.image,
+        originalTitle: item.title,
+        thumbnailTitle: item.title,
+        originalAlt: item.title,
+        thumbnailAlt: item.title,
+        description: item.title
+      }))} />
+      <Typography variant="h5" paragraph>Questions and Answers</Typography>
+      {
+        faq.items.map(({question, answer}, index) => (
+          <div key={index}>
+            <Typography variant="h6">{question}</Typography>
+            <Typography variant="body1" paragraph>{answer}</Typography>
+          </div>
+        ))
+      }
+    </div>
+  )
+})

@@ -1,13 +1,14 @@
 # dependencies
-/node_modules
+node_modules/
 
 # testing
 /coverage
 
 # production
+/artifacts
 /dist
 
-# dev
+#dev
 /tmp
 
 # misc
