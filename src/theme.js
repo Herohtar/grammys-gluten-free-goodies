@@ -17,9 +17,6 @@ const theme = createMuiTheme({
       expander: grey[100],
     },
   },
-  typography: {
-    useNextVariants: true,
-  },
 })
 
 export default theme;
