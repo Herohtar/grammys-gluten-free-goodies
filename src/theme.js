@@ -1,6 +1,7 @@
+import { createMuiTheme } from '@material-ui/core/styles'
 import { brown, grey, orange } from '@material-ui/core/colors';
 
-export default {
+const theme = createMuiTheme({
   palette: {
     type: 'light',
     primary: brown,
@@ -19,4 +20,6 @@ export default {
   typography: {
     useNextVariants: true,
   },
-}
+})
+
+export default theme;
