@@ -21,7 +21,7 @@ export default () => {
   return (
     <div>
       <Head title={`${productsPage.title} - ${title}`} />
-      <Grid container spacing={24} className={classes.root}>
+      <Grid container spacing={3} className={classes.root}>
         {
           products.items.map((product, index) => (
             <Grid key={index} item xs={12} sm={6} md={4} container>
