@@ -8,8 +8,8 @@ import ReactMarkdown from 'react-markdown'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    //paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 4,
+    //paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(4),
   },
 }))
 

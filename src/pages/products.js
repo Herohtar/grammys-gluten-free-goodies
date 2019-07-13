@@ -8,9 +8,9 @@ import ProductCard from '../components/ProductCard'
 const useStyles = makeStyles(theme => ({
   root: {
     paddingTop: '25px',
-    paddingLeft: theme.spacing.unit,
-    paddingRight: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit,
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
   },
 }))
 
