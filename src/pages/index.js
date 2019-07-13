@@ -1,27 +1,27 @@
 import React from 'react'
 import { Head, useSiteData, useRouteData } from 'react-static'
 //
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
 import ReactMarkdown from 'react-markdown'
 import ImageGallery from 'react-image-gallery'
 
 import 'react-image-gallery/styles/css/image-gallery.css'
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    paddingTop: theme.spacing.unit * 2,
-    paddingLeft: theme.spacing.unit * 6,
-    paddingRight: theme.spacing.unit * 6,
+    paddingTop: theme.spacing(2),
+    paddingLeft: theme.spacing(6),
+    paddingRight: theme.spacing(6),
   },
   gallery: {
     alignSelf: 'center',
     width: '80%',
     marginBottom: 60,
   }
-})
+}))
 
 const gallerySettings = {
   showPlayButton: false,
@@ -30,7 +30,8 @@ const gallerySettings = {
   slideInterval: 10000,
 }
 
-export default withStyles(styles)(({ classes }) => {
+export default () => {
+  const classes = useStyles()
   const { title } = useSiteData()
   const { homePage, imageCarousel, faq } = useRouteData()
   return (
@@ -57,4 +58,4 @@ export default withStyles(styles)(({ classes }) => {
       }
     </div>
   )
-})
+}

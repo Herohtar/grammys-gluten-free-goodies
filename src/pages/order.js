@@ -1,19 +1,20 @@
 import React from 'react'
 import { Head, useSiteData, useRouteData } from 'react-static'
 //
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import ReactMarkdown from 'react-markdown'
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    //paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 4,
+    //paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(4),
   },
-})
+}))
 
-export default withStyles(styles)(({ classes }) => {
+export default () => {
+  const classes = useStyles()
   const { title } = useSiteData()
   const { orderPage } = useRouteData()
   return (
@@ -26,4 +27,4 @@ export default withStyles(styles)(({ classes }) => {
       </Grid>
     </div>
   )
-})
+}
