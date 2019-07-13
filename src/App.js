@@ -1,7 +1,7 @@
 import React from 'react'
 import { Root, Routes, useSiteData } from 'react-static'
 //
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
@@ -11,8 +11,8 @@ import NavigationTabs from './components/NavigationTabs'
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 4,
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(4),
     backgroundColor: '#42382f',
     backgroundImage: 'url(/uploads/background.png)',
     backgroundPosition: 'center top',
@@ -25,13 +25,13 @@ const styles = theme => ({
     maxWidth: '100%',
   },
   content: {
-    paddingTop: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit * 2,
-    paddingLeft: theme.spacing.unit * 2,
-    paddingRight: theme.spacing.unit * 2,
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(2),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
   },
   footer: {
-    paddingTop: theme.spacing.unit * 4,
+    paddingTop: theme.spacing(4),
     color: theme.palette.text.footer,
   },
   flexColumn: {
@@ -43,7 +43,8 @@ const styles = theme => ({
   },
 })
 
-export default withStyles(styles)(({ classes }) => {
+export default () => {
+  const classes = useStyles()
   const { headerImage } = useSiteData()
   return (
     <Root>
@@ -66,4 +67,4 @@ export default withStyles(styles)(({ classes }) => {
       </Grid>
     </Root>
   )
-})
+}
