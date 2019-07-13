@@ -7,7 +7,7 @@ export default () => ({
   beforeRenderToHtml: (App, { meta }) => {
     meta.muiSheets = new ServerStyleSheets()
 
-    return (
+    return meta.muiSheets.collect(
       <ThemeProvider theme={theme}>
         {App}
       </ThemeProvider>
