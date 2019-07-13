@@ -8,7 +8,7 @@ import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import NavigationTabs from './components/NavigationTabs'
 
-const styles = makeStyles(theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing(2),
