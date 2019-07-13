@@ -57,7 +57,9 @@ export default () => {
           <Grid item xs={12} sm={11} md={9} lg={6} className={classes.flexColumn}>
             <Paper className={[classes.content, classes.flexGrow].join(' ')}>
               <NavigationTabs />
-              <Routes />
+              <React.Suspense fallback={'Loading...'}>
+                <Routes />
+              </React.Suspense>
             </Paper>
           </Grid>
         </Grid>
