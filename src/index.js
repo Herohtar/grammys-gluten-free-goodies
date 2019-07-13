@@ -12,7 +12,7 @@ export default App
 
 // Render your app
 if (typeof document !== 'undefined') {
-  const target = document.getElementById('root')
+  const target = document.querySelector('#root')
   const renderMethod = target.hasChildNodes() ? ReactDOM.hydrate : ReactDOM.render
   const render = Comp => {
     renderMethod(
@@ -21,7 +21,7 @@ if (typeof document !== 'undefined') {
       </ThemeProvider>,
       target,
       () => {
-        const jssStyles = document.getElementById('jss-server-side')
+        const jssStyles = document.querySelector('#jss-server-side')
         if (jssStyles && jssStyles.parentNode) {
           jssStyles.parentNode.removeChild(jssStyles)
         }
